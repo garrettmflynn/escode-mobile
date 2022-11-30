@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel="icon" href="assets/favicon.ico">
+    <title>ESCode Mobile Test</title>
+</head>
+<body>
+</body>
+<!-- <script type="module" src="./dist/index.js"></script> -->
+<script type="module">
+
+    // --------------------- Import ESCompose ---------------------
+    import { escompose } from './libraries/index.js'
+
+    const esc = {
+        __children: {
+            header: {
+                __element: 'h1',
+                __attributes: {
+                    innerText: 'Hello'
+                }
+            }
+        }
+    }
+
+    // --------------------- Declare Properties to Apply ---------------------
+    const properties = { 
+        __parent: document.body // Attach to DOM
+    }
+
+    // --------------------- Specify Options ---------------------
+    const options = {
+        utilities: {
+
+            // Wait for Child Resolution to Complete
+            // This is relevant to asynchronous source text bundling
+            await: true,
+        },
+    }
+
+
+    // --------------------- Instantiate the Component ---------------------
+    let component = escompose.create(
+        esc, 
+        properties,
+        options
+    )
+
+    console.log('ES Component', component)
+
+</script>
+
+</html>
