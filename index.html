@@ -16,7 +16,7 @@
     import { escompose, esm, escode } from './libraries/index.js'
 
     import * as escFile from './index.esc.js'
-    const esc = { __compose: { __object: escFile, __src: './index.esc.js' } }
+    const esc = escFile // { __compose: { __object: escFile, __src: './index.esc.js' } }
 
     // --------------------- Declare Properties to Apply ---------------------
     const properties = { 
@@ -36,13 +36,13 @@
                 class: escode.Editor
             },
 
-            // Bundler Options
-            bundle: {
-                function: esm.bundle.get,
-                options: {
-                    relativeTo: window.location.href,
-                }
-            }
+            // // Bundler Options
+            // bundle: {
+            //     function: esm.bundle.get,
+            //     options: {
+            //         relativeTo: window.location.href,
+            //     }
+            // }
         },
     }
 
