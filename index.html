@@ -16,6 +16,8 @@
     // --------------------- Import ESCompose ---------------------
     
     import * as escompose from './libraries/escompose/dist/index.esm.js'
+    import * as escode from './libraries/escode/dist/index.esm.js'
+
     // import { 
     //     escompose, 
     //     // esm, 
@@ -38,10 +40,10 @@
             // This is relevant to asynchronous source text bundling
             await: true,
 
-            // // Editor Options
-            // code: {
-            //     class: escode.Editor
-            // },
+            // Editor Options
+            code: {
+                class: escode.Editor
+            },
 
             // // Bundler Options
             // bundle: {
