@@ -2,9 +2,9 @@ export const __children = {
     header: {
         __element: 'h1',
         __attributes: {
-            innerText: 'Hello with Text (no editor)'
+            innerText: 'Hello (no esmpile, no editor usage)'
         }
     }
 }
 
-export const __editor = true
+// export const __editor = true
