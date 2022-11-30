@@ -13,18 +13,10 @@
 <script type="module">
 
     // --------------------- Import ESCompose ---------------------
-    import { escompose } from './libraries/index.js'
+    import { escompose, esm, escode } from './libraries/index.js'
 
-    const esc = {
-        __children: {
-            header: {
-                __element: 'h1',
-                __attributes: {
-                    innerText: 'Hello'
-                }
-            }
-        }
-    }
+    import * as escFile from './index.esc.js'
+    const esc = { __compose: { __object: escFile, __src: './index.esc.js' } }
 
     // --------------------- Declare Properties to Apply ---------------------
     const properties = { 
@@ -38,6 +30,19 @@
             // Wait for Child Resolution to Complete
             // This is relevant to asynchronous source text bundling
             await: true,
+
+            // Editor Options
+            code: {
+                class: escode.Editor
+            },
+
+            // Bundler Options
+            bundle: {
+                function: esm.bundle.get,
+                options: {
+                    relativeTo: window.location.href,
+                }
+            }
         },
     }
 
